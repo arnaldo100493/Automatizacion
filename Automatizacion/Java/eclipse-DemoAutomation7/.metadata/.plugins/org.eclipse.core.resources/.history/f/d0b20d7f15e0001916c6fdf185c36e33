@@ -1,0 +1,23 @@
+package everis.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import everis.DriverFactory;
+
+public class AddBookPage {
+
+	protected WebDriver driver = DriverFactory.getChromeDriver();
+	
+	  public Boolean AddPage(Integer quantity)
+      {
+		  
+          driver.findElement(By.xPath("//*[@id='listing']/tbody/tr[2]/td[4]/input")).clear();
+          driver.findElement(By.xpath("//*[@id='listing']/tbody/tr[2]/td[4]/input")).sendKeys(String.valueOf(quantity));
+          //ScreenshotManager.TakeScreenshot(driver, ctx);
+          driver.findElement(By.xpath("//input[@type='button' and @value='Add']")).click();
+          //ScreenshotManager.TakeScreenshot(driver, ctx);
+          driver.findElement(By.xpath("//input[@type='button' and @value='Logout']")).click();
+          return true;
+      }
+}

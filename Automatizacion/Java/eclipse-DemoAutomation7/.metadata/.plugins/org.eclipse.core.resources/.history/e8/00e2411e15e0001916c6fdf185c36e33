@@ -1,0 +1,105 @@
+package artefacto;
+
+import static org.junit.Assert.*;
+
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+
+import everis.BuyBookPage;
+import everis.DriverFactory;
+
+import org.junit.*;
+
+public class SahiTest {
+
+	  private static String baseURL;
+	  WebDriver driver = DriverFactory.getChromeDriver();
+	  
+	 @Before
+	  public void setUp() throws Exception {
+		 baseURL = "http://sahitest.com/demo/training/login.htm";
+	 }
+	
+	@Test
+	 public void BuyBook()
+	 {
+		   driver.get(baseURL);
+           BuyBookPage buyBookPage = new BuyBookPage();
+           buyBookPage.SetLogin("test", "secret");
+           //Assert.IsTrue(buyBookPage.AddPage(5000), "Error en la aplicación");
+	 }
+	
+	
+	/*
+	  private String baseUrl;
+	  private boolean acceptNextAlert = true;
+	  private StringBuffer verificationErrors = new StringBuffer();
+	  protected WebDriver driver = DriverFactory.getChromeDriver();
+
+	  @Before
+	  public void setUp() throws Exception {
+		 
+	    baseUrl = "https://www.katalon.com/";
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  }
+
+	  @Test
+	  public void testCase() throws Exception {
+	    driver.get("https://www.google.com/");
+	    driver.findElement(By.name("q")).clear();
+	    driver.findElement(By.name("q")).sendKeys("seleium");
+	    driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+	  }
+
+	  @After
+	  public void tearDown() throws Exception {
+	    driver.quit();
+	    String verificationErrorString = verificationErrors.toString();
+	    if (!"".equals(verificationErrorString)) {
+	      fail(verificationErrorString);
+	    }
+	  }
+
+	  private boolean isElementPresent(By by) {
+	    try {
+	      driver.findElement(by);
+	      return true;
+	    } catch (NoSuchElementException e) {
+	      return false;
+	    }
+	  }
+
+	  private boolean isAlertPresent() {
+	    try {
+	      driver.switchTo().alert();
+	      return true;
+	    } catch (NoAlertPresentException e) {
+	      return false;
+	    }
+	  }
+
+	  private String closeAlertAndGetItsText() {
+	    try {
+	      Alert alert = driver.switchTo().alert();
+	      String alertText = alert.getText();
+	      if (acceptNextAlert) {
+	        alert.accept();
+	      } else {
+	        alert.dismiss();
+	      }
+	      return alertText;
+	    } finally {
+	      acceptNextAlert = true;
+	    }
+	  }
+	
+	
+*/
+	
+}

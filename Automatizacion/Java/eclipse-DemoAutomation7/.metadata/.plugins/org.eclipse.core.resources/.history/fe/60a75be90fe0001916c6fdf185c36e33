@@ -1,0 +1,19 @@
+package everis;
+
+import org.openqa.selenium.WebDriver;
+
+public class BasePage {
+
+	  protected WebDriver driver = getChromeDriver();
+
+	    public BasePage verifyIsDisplayed(By element){
+	        Assert.assertTrue(driver.findElement(element).isDisplayed());
+	        return this;
+	    }
+
+	    public BasePage verifyIsNotDisplayed(By element){
+	        // your code ...
+	        return this;
+	    }
+	    
+}
